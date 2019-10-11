@@ -27,4 +27,4 @@ The defaults, if you never configure, are:
 - Mint-Y-Blue
 - Mint-Y-Dark-Blue
 - DMZ-Black
-- Mint-Y-Blue
+- Mint-Y-Dark-Blue

@@ -13,7 +13,7 @@ if not os.path.exists(config_file):
 		### Fill with some sensible defaults
 		conf_file.write('22:00\n09:00\n' + 
 		                'Mint-Y\nMint-Y-Blue\nMint-Y-Blue\nDMZ-White\nMint-Y-Blue\n' + 
-		                'Mint-Y-Dark\nMint-Y-Blue\nMint-Y-Dark-Blue\nDMZ-Black\nMint-Y-Blue')
+		                'Mint-Y-Dark\nMint-Y-Blue\nMint-Y-Dark-Blue\nDMZ-Black\nMint-Y-Dark-Blue')
 
 ### Global theme variables
 light_or_dark = ''
