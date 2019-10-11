@@ -229,7 +229,7 @@ load_config()
 while(True):
 	load_config() # So that it gets updated
 	new_light_or_dark = get_mode_for_now()
-	print('New iteration, mode=' + new_light_or_dark)
+	#print('New iteration, mode=' + new_light_or_dark)
 	if light_or_dark != new_light_or_dark:
 		light_or_dark = new_light_or_dark
 		if light_or_dark == 'light':
