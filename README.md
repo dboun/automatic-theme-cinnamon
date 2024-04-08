@@ -1,30 +1,40 @@
 # automatic-theme-cinnamon
-Automatic light/dark theme switcher for cinnamon 
+Automatic light/dark theme switcher for cinnamon. Only needs python3, no other dependencies.
 
-1. Place this script in a directory where it won't be moved from.
-2. Open terminal and navigate inside the directory and run ```./automatic_theme_cinnamon.py --configure``` to fill in your preferences. See 'Preference selection' section below for help with choosing preferences.
-3. In the cinnamon application menu search for ```Startup Applications```, press ```+``` and then ```Custom command```. Put ```automatic_theme_cinnamon``` in the name, and ```/path/to/automatic_theme_cinnamon.py --on``` in the command, where /path/to/ is the full path to where you placed the script (don't use env variables like $HOME).
+### Setup
 
-### Preference selection
+##### Edit the configuration
 
-For seeing the available theme options on your system and to install new theme, search for ```Themes``` in the cinnamon application menu. The categories presented are the same that are queried by the script.
+Choose what to show in light theme and what in dark and what time to trigger:
 
-The defaults, if you never configure, are:
+```bash
+python3 automatic_theme_cinnamon.py configure
+```
 
-###### Dark theme start/end:
-- 22:00
-- 09:00
+### Run simply (checks every 30 seconds)
 
-###### Light mode configuration:
-- Mint-Y
-- Mint-Y-Blue
-- Mint-Y-Blue
-- DMZ-White
-- Mint-Y-Blue
+```bash
+python3 automatic_theme_cinnamon.py run
+```
 
-###### Dark mode configuration:
-- Mint-Y-Dark
-- Mint-Y-Blue
-- Mint-Y-Dark-Blue
-- DMZ-Black
-- Mint-Y-Dark-Blue
+### Run in the background and autostart on boot (checks every 30 seconds)
+
+```bash
+python3 automatic_theme_cinnamon.py install
+python3 automatic_theme_cinnamon.py autostart on
+python3 automatic_theme_cinnamon.py start
+```
+
+It is now installed (at `~/.local/bin/automatic_theme_cinnamon`) so this repo can be removed
+
+### Uninstall if running in the background or boot
+
+```bash
+python3 automatic_theme_cinnamon.py stop
+python3 automatic_theme_cinnamon.py autostart off
+python3 automatic_theme_cinnamon.py uninstall
+# Alterinatively, if you don't have this repo anymore:
+# ~/.local/bin/automatic_theme_cinnamon stop
+# ~/.local/bin/automatic_theme_cinnamon autostart off
+# ~/.local/bin/automatic_theme_cinnamon uninstall
+```
