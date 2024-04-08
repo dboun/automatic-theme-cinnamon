@@ -1,4 +1,4 @@
-# automatic-theme-cinnamon
+# Automatic theme switch for the linux cinnamon desktop
 Automatic light/dark theme switcher for cinnamon. Only needs python3, no other dependencies.
 
 ### Setup
