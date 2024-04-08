@@ -11,7 +11,9 @@ Choose what to show in light theme and what in dark and what time to trigger:
 python3 automatic_theme_cinnamon.py configure
 ```
 
-### Run simply (checks every 30 seconds)
+Alternatively, manually edit the config at `~/.config/automatic_theme_cinnamon/config` after running once.
+
+### Run simply in the terminal (checks every 30 seconds)
 
 ```bash
 python3 automatic_theme_cinnamon.py run
