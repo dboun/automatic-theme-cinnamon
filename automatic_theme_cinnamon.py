@@ -133,16 +133,14 @@ def __run():
 		if light_or_dark != new_light_or_dark or config != new_config:
 			light_or_dark = new_light_or_dark
 			config = new_config
-			if light_or_dark == 'light':
-				os.system(f"gsettings set org.cinnamon.desktop.interface cursor-theme '{config['light']['Mouse Pointer']}'")
-				os.system(f"gsettings set org.cinnamon.desktop.interface gtk-theme '{config['light']['Applications']}'")
-				os.system(f"gsettings set org.cinnamon.desktop.interface icon-theme '{config['light']['Icons']}'")
-				os.system(f"gsettings set org.cinnamon.theme name '{config['light']['Desktop']}'")
-			else:
-				os.system(f"gsettings set org.cinnamon.desktop.interface cursor-theme '{config['dark']['Mouse Pointer']}'")
-				os.system(f"gsettings set org.cinnamon.desktop.interface gtk-theme '{config['dark']['Applications']}'")
-				os.system(f"gsettings set org.cinnamon.desktop.interface icon-theme '{config['dark']['Icons']}'")
-				os.system(f"gsettings set org.cinnamon.theme name '{config['dark']['Desktop']}'")
+			mode = config[light_or_dark]
+			os.system(f"gsettings set org.cinnamon.desktop.interface cursor-theme '{mode['Mouse Pointer']}'")
+			os.system(f"gsettings set org.cinnamon.desktop.interface gtk-theme '{mode['Applications']}'")
+			os.system(f"gsettings set org.cinnamon.desktop.interface icon-theme '{mode['Icons']}'")
+			os.system(f"gsettings set org.cinnamon.theme name '{mode['Desktop']}'")
+			# Light/dark preference that apps like Firefox follow
+			os.system(f"gsettings set org.x.apps.portal color-scheme 'prefer-{light_or_dark}'")
+			os.system(f"gsettings set org.gnome.desktop.interface color-scheme 'prefer-{light_or_dark}'")
 		time.sleep(30)
 
 def __configure():
